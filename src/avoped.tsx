@@ -23,37 +23,36 @@ function App() {
     }, []);
 
   const demoImages = [
-    "harman/FinanzasHarman.jpg",
-    "harman/interHarman.png", 
-    "harman/Axelpremios.jpg"
+    "avo/operacion.png",
+    "avo/dashboard.png", 
+    "avo/login.png"
   ];
 
 
-  const technologies = [
-    { name: 'Symfony', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
-    { name: 'PHP', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
-    { name: 'HTML5', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
-    { name: 'CSS3', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
-    { name: 'JavaScript', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
-    { name: 'MySQL', color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
-    { name: 'Twig', color: 'bg-green-500/20 text-green-400 border-green-500/30' },
-    { name: 'Git', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
-    { name: 'Composer', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-    { name: 'Atlassian Suite', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
-    { name: 'Scrum', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' }
-  ];
+    const technologies = [
+        { name: 'Java', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+        { name: 'NetBeans', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
+        { name: 'MySQL', color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
+        { name: 'MariaDB', color: 'bg-green-500/20 text-green-400 border-green-500/30' },
+        { name: 'JDBC', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+        { name: 'Swing', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
+        { name: 'Git', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
+        { name: 'ArgoUML', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
+        { name: 'Balsamiq', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
+        { name: 'RUP', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' }
+    ];
 
-  const features = [
-    "Gestiona solicitudes con calendario dinámico y prevención automática de conflictos de reservación",
-    "Automatiza 100% de notificaciones por correo en 4 estados diferentes del proceso", 
-    "Genera reportes automáticos en PDF/Excel con filtros avanzados por fecha y estado",
-    "Coffee Break funciona 24/7 integrado para garantizar servicios empresariales continuos"
-  ];
+    const features = [
+        "Gestiona registros de productores, empacadores y comisionistas con validación de datos",
+        "Automatiza seguimiento de cortes con control de calidad, precios y ubicación de huertas", 
+        "Genera reportes automáticos de inventario, ventas y análisis de proveedores",
+        "Sistema funciona 24/7 integrado para garantizar operaciones comerciales continuas"
+    ];
 
-  const stats = [
-    { number: "9", label: "Total Lenguajes", icon: <Code size={20} /> },
-    { number: "4", label: "Formatos de archivo", icon: <Database size={20} /> }
-  ];
+    const stats = [
+        { number: "10", label: "Total Tecnologías", icon: <Code size={20} /> },
+        { number: "4", label: "Formatos de archivo", icon: <Database size={20} /> }
+    ];
 
   return (
     <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed" style={{backgroundImage: "url('fondos/estrellas.jpg')"}}>
@@ -70,7 +69,7 @@ function App() {
               <div className="text-white/60">
                 <span>Projectos</span>
                 <span className="mx-2">/</span>
-                <span className="text-white">Harman de México</span>
+                <span className="text-white">AvoPed</span>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
@@ -101,14 +100,15 @@ function App() {
           <div className="space-y-8">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Coffee Break
+              Comercializadora AVOPED
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed text-justify">
-                Coffee Break es una solución web empresarial que optimiza la gestión integral de solicitudes de servicios 
-                de cafetería corporativa. Los usuarios crean peticiones personalizadas, especifican detalles del evento, y 
-                configuran aprobaciones automatizadas por centro de costos. El sistema opera con flujo completo de 
-                notificaciones por correo, seguimiento en tiempo real de estados, y generación automática de reportes PDF/Excel, 
-                maximizando así la eficiencia operativa y satisfacción del personal en Harman México.
+              Sistema de Gestión AVOPED es una solución web empresarial que optimiza la administración integral 
+              de comercialización de aguacate. Los usuarios registran productores, empacadores y comisionistas, 
+              gestionan cortes con control de calidad y precios, y administran el flujo completo de la cadena de 
+              distribución. El sistema opera con gestión de inventarios, seguimiento de proveedores, control de 
+              pedidos y ventas, generación de reportes automáticos y análisis de datos, maximizando la eficiencia 
+              operativa y optimizando la comercialización de aguacate en AVOPED S.A.
               </p>
             </div>
 
@@ -164,7 +164,7 @@ function App() {
                 <div className="absolute bottom-4 right-4">
                   <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1.5">
                     <span className="text-white text-sm font-medium">
-                      Proyecto Coffee Break - Harman México 2024
+                      Sistema de Gestión AVOPED - ITST 2023
                     </span>
                   </div>
                 </div>
@@ -191,23 +191,23 @@ function App() {
         <div className="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Globe className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Gestión multi-departamental</h3>
-            <p className="text-gray-400 text-sm mt-2">Integración entre cafetería, centros de costo y departamentos de aprobación</p>
+            <h3 className="text-white font-semibold text-lg">Gestión integral del aguacate</h3>
+            <p className="text-gray-400 text-sm mt-2">Administración completa de productores, empacadoras, cortes y comisionistas</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Zap className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Notificaciones en tiempo real</h3>
-            <p className="text-gray-400 text-sm mt-2">Sistema automático de correos y actualizaciones de estado instantáneas</p>
+            <h3 className="text-white font-semibold text-lg">Automatización de procesos</h3>
+            <p className="text-gray-400 text-sm mt-2">Eliminación de hojas de cálculo manuales y mejora de eficiencia operativa</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Shield className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Sistema seguro empresarial</h3>
-            <p className="text-gray-400 text-sm mt-2">Autenticación por roles y control de acceso granular</p>
+            <h3 className="text-white font-semibold text-lg">Control de calidad</h3>
+            <p className="text-gray-400 text-sm mt-2">Sistema robusto de control y seguimiento de calidad de productos</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Clock className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">24/7</h3>
-            <p className="text-gray-400 text-sm mt-2">Funcionamiento continuo</p>
+            <h3 className="text-white font-semibold text-lg">Reportes automáticos</h3>
+            <p className="text-gray-400 text-sm mt-2">Generación de informes diarios de ventas e inventario</p>
           </div>
         </div>
       </div>

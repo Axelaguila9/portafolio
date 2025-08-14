@@ -23,36 +23,33 @@ function App() {
     }, []);
 
   const demoImages = [
-    "harman/FinanzasHarman.jpg",
-    "harman/interHarman.png", 
-    "harman/Axelpremios.jpg"
+    "pisadita/inventario.png",
+    "pisadita/ventas.png", 
+    "pisadita/analisis.png"
   ];
 
 
-  const technologies = [
-    { name: 'Symfony', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
-    { name: 'PHP', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
-    { name: 'HTML5', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
-    { name: 'CSS3', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
-    { name: 'JavaScript', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
+    const technologies = [
+    { name: 'Java', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+    { name: 'Eclipse IDE', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
     { name: 'MySQL', color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
-    { name: 'Twig', color: 'bg-green-500/20 text-green-400 border-green-500/30' },
-    { name: 'Git', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
-    { name: 'Composer', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-    { name: 'Atlassian Suite', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
-    { name: 'Scrum', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' }
-  ];
+    { name: 'Swing', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
+    { name: 'JDBC', color: 'bg-green-500/20 text-green-400 border-green-500/30' },
+    { name: 'Microsoft Visio', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
+    { name: 'OpenProject', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
+    { name: 'UML', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' }
+    ];
 
-  const features = [
-    "Gestiona solicitudes con calendario dinámico y prevención automática de conflictos de reservación",
-    "Automatiza 100% de notificaciones por correo en 4 estados diferentes del proceso", 
-    "Genera reportes automáticos en PDF/Excel con filtros avanzados por fecha y estado",
-    "Coffee Break funciona 24/7 integrado para garantizar servicios empresariales continuos"
-  ];
+    const features = [
+    "Gestiona inventario con control automático de stock y alertas de niveles mínimos de productos",
+    "Registra ventas con búsqueda por código de barras y cálculo automático de totales", 
+    "Genera consultas filtradas por fecha y código con estadísticas de productos más vendidos",
+    "La Pisadita centraliza proveedores, empleados e inventario para optimizar la gestión integral"
+    ];
 
   const stats = [
-    { number: "9", label: "Total Lenguajes", icon: <Code size={20} /> },
-    { number: "4", label: "Formatos de archivo", icon: <Database size={20} /> }
+    { number: "2", label: "Total Lenguajes", icon: <Code size={20} /> },
+    { number: "3", label: "Formatos de archivo", icon: <Database size={20} /> }
   ];
 
   return (
@@ -70,7 +67,7 @@ function App() {
               <div className="text-white/60">
                 <span>Projectos</span>
                 <span className="mx-2">/</span>
-                <span className="text-white">Harman de México</span>
+                <span className="text-white">Zapatería la Pisadita</span>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
@@ -101,15 +98,16 @@ function App() {
           <div className="space-y-8">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Coffee Break
+                La Pisadita
               </h1>
-              <p className="text-gray-300 text-lg leading-relaxed text-justify">
-                Coffee Break es una solución web empresarial que optimiza la gestión integral de solicitudes de servicios 
-                de cafetería corporativa. Los usuarios crean peticiones personalizadas, especifican detalles del evento, y 
-                configuran aprobaciones automatizadas por centro de costos. El sistema opera con flujo completo de 
-                notificaciones por correo, seguimiento en tiempo real de estados, y generación automática de reportes PDF/Excel, 
-                maximizando así la eficiencia operativa y satisfacción del personal en Harman México.
-              </p>
+                <p className="text-gray-300 text-lg leading-relaxed text-justify">
+                La Pisadita es una solución de gestión local integral que optimiza el control completo de inventario, 
+                proveedores y operaciones comerciales para la zapatería. Los usuarios registran productos y proveedores con 
+                información detallada, controlan entradas y salidas de mercancía, y procesan ventas con búsqueda por código 
+                de barras. El sistema opera con dashboard en tiempo real para estadísticas de ventas, alertas automáticas 
+                de stock mínimo, gestión de empleados, y generación de consultas filtradas por fecha/código, maximizando 
+                así la eficiencia operativa y satisfacción del cliente en el establecimiento de calzado.
+                </p>
             </div>
 
             <div className="flex gap-3 md:gap-6">
@@ -164,7 +162,7 @@ function App() {
                 <div className="absolute bottom-4 right-4">
                   <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1.5">
                     <span className="text-white text-sm font-medium">
-                      Proyecto Coffee Break - Harman México 2024
+                    Sistema La Pisadita - Zapatería La Pisadita 2022-2023
                     </span>
                   </div>
                 </div>
@@ -189,26 +187,26 @@ function App() {
         </div>
     {/*Metricos de Datios*/}
         <div className="mt-8 md:mt-16 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-            <Globe className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Gestión multi-departamental</h3>
-            <p className="text-gray-400 text-sm mt-2">Integración entre cafetería, centros de costo y departamentos de aprobación</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-            <Zap className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Notificaciones en tiempo real</h3>
-            <p className="text-gray-400 text-sm mt-2">Sistema automático de correos y actualizaciones de estado instantáneas</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-            <Shield className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Sistema seguro empresarial</h3>
-            <p className="text-gray-400 text-sm mt-2">Autenticación por roles y control de acceso granular</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
-            <Clock className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">24/7</h3>
-            <p className="text-gray-400 text-sm mt-2">Funcionamiento continuo</p>
-          </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                <Globe className="text-emerald-400 mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-lg">Gestión integral</h3>
+                <p className="text-gray-400 text-sm mt-2">Control completo de inventario, proveedores, ventas y empleados en una sola plataforma</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                <Zap className="text-emerald-400 mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-lg">Alertas automáticas</h3>
+                <p className="text-gray-400 text-sm mt-2">Notificaciones de stock mínimo y actualizaciones de inventario en tiempo real</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                <Shield className="text-emerald-400 mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-lg">Sistema seguro local</h3>
+                <p className="text-gray-400 text-sm mt-2">Autenticación de usuarios y protección de datos sensibles</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                <Clock className="text-emerald-400 mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-lg">Eficiencia operativa</h3>
+                <p className="text-gray-400 text-sm mt-2">Optimización de procesos y reducción de errores humanos</p>
+            </div>
         </div>
       </div>
     </div>

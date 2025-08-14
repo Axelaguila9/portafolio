@@ -23,32 +23,29 @@ function App() {
     }, []);
 
   const demoImages = [
-    "harman/FinanzasHarman.jpg",
-    "harman/interHarman.png", 
-    "harman/Axelpremios.jpg"
+    "tec/reconocimientoITST.jpg",
+    "tec/inicio.png", 
+    "tec/solicitudes.png"
   ];
 
-
-  const technologies = [
-    { name: 'Symfony', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
+const technologies = [
     { name: 'PHP', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
-    { name: 'HTML5', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
-    { name: 'CSS3', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
-    { name: 'JavaScript', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
+    { name: 'Bootstrap', color: 'bg-violet-500/20 text-violet-400 border-violet-500/30' },
+    { name: 'XAMPP', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
     { name: 'MySQL', color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
-    { name: 'Twig', color: 'bg-green-500/20 text-green-400 border-green-500/30' },
-    { name: 'Git', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
-    { name: 'Composer', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
-    { name: 'Atlassian Suite', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
-    { name: 'Scrum', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' }
+    { name: 'phpMyAdmin', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
+    { name: 'HTML5', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+    { name: 'CSS3', color: 'bg-blue-600/20 text-blue-400 border-blue-600/30' },
+    { name: 'JavaScript', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
+    { name: 'Git', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
   ];
 
-  const features = [
-    "Gestiona solicitudes con calendario dinámico y prevención automática de conflictos de reservación",
-    "Automatiza 100% de notificaciones por correo en 4 estados diferentes del proceso", 
-    "Genera reportes automáticos en PDF/Excel con filtros avanzados por fecha y estado",
-    "Coffee Break funciona 24/7 integrado para garantizar servicios empresariales continuos"
-  ];
+    const features = [
+    "Gestiona solicitudes académicas con sistema de registro y aprobación automatizada de docentes",
+    "Automatiza notificaciones del proceso de evaluación y seguimiento del desempeño académico", 
+    "Genera dashboards interactivos con filtros avanzados para seguimiento del desempeño",
+    "Sistema funciona de manera continua para garantizar servicios educativos ininterrumpidos"
+    ];
 
   const stats = [
     { number: "9", label: "Total Lenguajes", icon: <Code size={20} /> },
@@ -70,7 +67,7 @@ function App() {
               <div className="text-white/60">
                 <span>Projectos</span>
                 <span className="mx-2">/</span>
-                <span className="text-white">Harman de México</span>
+                <span className="text-white">TecNM Tacámbaro</span>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
@@ -101,14 +98,14 @@ function App() {
           <div className="space-y-8">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Coffee Break
+                Sistema de Gestión Académica Integral
               </h1>
               <p className="text-gray-300 text-lg leading-relaxed text-justify">
-                Coffee Break es una solución web empresarial que optimiza la gestión integral de solicitudes de servicios 
-                de cafetería corporativa. Los usuarios crean peticiones personalizadas, especifican detalles del evento, y 
-                configuran aprobaciones automatizadas por centro de costos. El sistema opera con flujo completo de 
-                notificaciones por correo, seguimiento en tiempo real de estados, y generación automática de reportes PDF/Excel, 
-                maximizando así la eficiencia operativa y satisfacción del personal en Harman México.
+                Sistema de Gestión Académica Integral es una solución web institucional para administración académica 
+                que desarrollé como Web Administrator. Implementé módulos web institucionales para mantenimiento y desarrollo 
+                de bases de datos, creando un sistema gráfico para evaluación docente con dashboard interactivo. 
+                El sistema incluye registro de docentes y sistema de aprobación automatizado, optimizando significativamente 
+                el procesamiento administrativo y la gestión de información del Tecnológico Superior de Tacámbaro.
               </p>
             </div>
 
@@ -164,7 +161,7 @@ function App() {
                 <div className="absolute bottom-4 right-4">
                   <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1.5">
                     <span className="text-white text-sm font-medium">
-                      Proyecto Coffee Break - Harman México 2024
+                      Gestion de Academia - TecNM Tacambaro 2024
                     </span>
                   </div>
                 </div>
@@ -192,22 +189,22 @@ function App() {
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Globe className="text-emerald-400 mx-auto mb-3" size={32} />
             <h3 className="text-white font-semibold text-lg">Gestión multi-departamental</h3>
-            <p className="text-gray-400 text-sm mt-2">Integración entre cafetería, centros de costo y departamentos de aprobación</p>
+            <p className="text-gray-400 text-sm mt-2">Integración entre academia, departamentos y carreras del tecnológico</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Zap className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Notificaciones en tiempo real</h3>
-            <p className="text-gray-400 text-sm mt-2">Sistema automático de correos y actualizaciones de estado instantáneas</p>
+            <h3 className="text-white font-semibold text-lg">Dashboard interactivo</h3>
+            <p className="text-gray-400 text-sm mt-2">Sistema gráfico de evaluación docente con seguimiento en tiempo real</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Shield className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Sistema seguro empresarial</h3>
-            <p className="text-gray-400 text-sm mt-2">Autenticación por roles y control de acceso granular</p>
+            <h3 className="text-white font-semibold text-lg">Sistema seguro institucional</h3>
+            <p className="text-gray-400 text-sm mt-2">Autenticación por roles académicos y control de acceso granular</p>
           </div>
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <Clock className="text-emerald-400 mx-auto mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">24/7</h3>
-            <p className="text-gray-400 text-sm mt-2">Funcionamiento continuo</p>
+            <h3 className="text-white font-semibold text-lg">Optimización continua</h3>
+            <p className="text-gray-400 text-sm mt-2">Funcionamiento continuo optimizando procesos administrativos</p>
           </div>
         </div>
       </div>

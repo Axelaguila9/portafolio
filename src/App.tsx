@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Globe, Database, Code, GitBranch, User, Target, Briefcase, GraduationCap, Award, Badge, PhoneCall, Mail, MapPin} from 'lucide-react';
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp, FaDownload } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import Harman from './harman'; // Tu componente harman
+import Harman from './harman.tsx';
+import Tec from './tec.tsx';
+import Avoped from './avoped.tsx';
+import Pisadita from './pisadita.tsx';
 
 interface FloatingIconProps {
   icon: React.ReactNode;
@@ -103,7 +106,7 @@ const HomePage = () => {
 {/*Principal*/}
       <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed" style={{backgroundImage: "url('fondos/estrellas.jpg')"}}>
       
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-sm border-b border-white/20">
+        <div className="fixed top-0 left-0 right-0 z-50 bg-black/10 backdrop-blur-sm border-b border-white/20">
           <div className="container mx-auto px-4 md:px-40">
             <div className="flex items-center justify-between h-16 md:h-12">
               <div className="flex items-center">
@@ -327,51 +330,51 @@ const HomePage = () => {
         </div>
 
         <div className="-mt-12 grid grid-cols-1 md:grid-cols-3 gap-3 max-w-[1200px] mx-auto px-4">
-          <div className="bg-white rounded-lg p-4 relative border-2 border-black">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <div className="absolute top-0 left-0 right-0 h-1 bg-emerald-900 rounded-t-lg"></div>
             <div className="flex items-center gap-4">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-emerald-500 rounded-full flex items-center justify-center text-black shadow-lg transition-colors">
                 <User size={20} className="md:w-5 md:h-5" />
               </div>
-              <h3 className="text-black text-lg md:text-xl font-sans font-semibold">¿Quién Soy?</h3>
+              <h3 className="text-white text-lg md:text-xl font-sans font-semibold">¿Quién Soy?</h3>
             </div>
 
             <p className='text-justify'>
-              <span className='text-black text-sm font-sans'>
+              <span className='text-white text-sm font-sans'>
                 Ingeniero en sistemas Computacionales y desarrollador web en constante actualización con las últimas tecnologías,
                 motivado con solidos conocimientos en desarrollo de software y diseño de interfaces web modernas.
               </span>
             </p>
           </div>
           
-          <div className="bg-white rounded-lg p-4 relative border-2 border-black">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <div className="absolute top-0 left-0 right-0 h-1 bg-emerald-900 rounded-t-lg"></div>
             <div className="flex items-center gap-4">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-emerald-500 rounded-full flex items-center justify-center text-black shadow-lg transition-colors">
                 <Target size={20} className="md:w-5 md:h-5" />
               </div>
-              <h3 className="text-black text-lg md:text-xl font-sans font-semibold">Mi Objetivo</h3>
+              <h3 className="text-white text-lg md:text-xl font-sans font-semibold">Mi Objetivo</h3>
             </div>
 
             <p className='text-justify'>
-              <span className='text-black text-sm font-sans'>
+              <span className='text-white text-sm font-sans'>
                 Obtener una posición como desarrollador Full Stack donde pueda aplicar mis conocimientos técnicos para crear soluciones 
                 innovadoras y contribuir al crecimiento de proyectos tecnológicos impactantes.
               </span>
             </p>
           </div>
           
-          <div className="bg-white rounded-lg p-4 relative border-2 border-black">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <div className="absolute top-0 left-0 right-0 h-1 bg-emerald-900 rounded-t-lg"></div>
             <div className="flex items-center gap-4">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-emerald-500 rounded-full flex items-center justify-center text-black shadow-lg transition-colors">
                 <Briefcase size={20} className="md:w-5 md:h-5" />
               </div>
-              <h3 className="text-black text-lg md:text-xl font-sans font-semibold">Mi Perfil</h3>
+              <h3 className="text-white text-lg md:text-xl font-sans font-semibold">Mi Perfil</h3>
             </div>
 
             <p className='text-justify'>
-              <span className='text-black text-sm font-sans'>
+              <span className='text-white text-sm font-sans'>
                 Me caracterizo por mi capacidad para desarrollar sistemas web integrales y optimizar procesos empresariales a través de 
                 soluciones tecnológicas. Tengo experiencia sólida en la implementación de módulos de automatización, creación de dashboards 
                 interactivos y desarrollo de aplicaciones Full Stack que mejoran la eficiencia operativa.
@@ -405,12 +408,12 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div id="sections-container" className="mt-4 bg-emerald-900 rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-3 max-w-[1200px] mx-auto px-1">  
+        <div id="sections-container" className="mt-4 bg-white/5 backdrop-blur-sm rounded-xl grid grid-cols-1 md:grid-cols-3 gap-3 max-w-[1200px] mx-auto px-1 border border-white/10 text-center">
           <div className={`mt-2 mb-2 h-12 md:h-16 rounded-2xl p-2 relative cursor-pointer flex flex-col items-center justify-center transition-colors group
                ${activeSection === 'educacion' ? 'bg-black' : 'bg-white hover:bg-black'}`}
                onClick={() => {setActiveSection('educacion');
                setTimeout(() => {document.getElementById('educacion')?.scrollIntoView({behavior: 'smooth', block: 'start' });}, 100);}}>
-            <GraduationCap size={20} className={`md:w-5 md:h-5 transition-colors duration-300 ${activeSection === 'educacion' ? 'text-white' : 'text-black group-hover:text-white'}`}/>
+            <GraduationCap size={20} className={`md:w-5 md:h-5 transition-colors duration-300 ${activeSection === 'educacion' ? 'text-white' : 'text-emerald-500 group-hover:text-white'}`}/>
             <h3 className={`-mt-1 font-sans font-semibold text-sm md:text-base text-center transition-colors duration-300 ${activeSection === 'educacion' ? 'text-white' : 'text-black group-hover:text-white'}`}>Formación académica</h3>
           </div>
 
@@ -418,7 +421,7 @@ const HomePage = () => {
                ${activeSection === 'certificaciones' ? 'bg-black' : 'bg-white hover:bg-black'}`}
                onClick={() => {setActiveSection('certificaciones');
                setTimeout(() => {document.getElementById('certificaciones')?.scrollIntoView({behavior: 'smooth', block: 'start' });}, 100);}}>
-            <Badge size={20} className={`md:w-5 md:h-5 ${activeSection === 'certificaciones' ? 'text-white' : 'text-black group-hover:text-white'}`}/>
+            <Badge size={20} className={`md:w-5 md:h-5 ${activeSection === 'certificaciones' ? 'text-white' : 'text-emerald-500 group-hover:text-white'}`}/>
             <h3 className={`-mt-1 font-sans font-semibold text-sm md:text-base text-center ${activeSection === 'certificaciones' ? 'text-white' : 'text-black group-hover:text-white'}`}>Certificaciones</h3>
           </div>
 
@@ -426,13 +429,13 @@ const HomePage = () => {
                ${activeSection === 'reconocimientos' ? 'bg-black' : 'bg-white hover:bg-black'}`}
                onClick={() => {setActiveSection('reconocimientos');
                setTimeout(() => {document.getElementById('reconocimientos')?.scrollIntoView({behavior: 'smooth', block: 'start' });}, 100);}}>
-            <Award size={20} className={`md:w-5 md:h-5 ${activeSection === 'reconocimientos' ? 'text-white' : 'text-black group-hover:text-white'}`}/>
+            <Award size={20} className={`md:w-5 md:h-5 ${activeSection === 'reconocimientos' ? 'text-white' : 'text-emerald-500 group-hover:text-white'}`}/>
             <h3 className={`-mt-1 font-sans font-semibold text-sm md:text-base text-center ${activeSection === 'reconocimientos' ? 'text-white' : 'text-black group-hover:text-white'}`}>Reconocimientos</h3>
           </div>
         </div>
       </div>
 
-      <div className="mt-4 relative pb-8">
+      <div className="mt-4 relative pb-4">
     {/* Panel de Educación */}
         <div className={`transition-all duration-700 ease-in-out ${
           activeSection === 'educacion' 
@@ -440,7 +443,7 @@ const HomePage = () => {
             : 'opacity-0 transform translate-y-8 absolute inset-0 pointer-events-none'
         }`}>
           <div id="educacion" className="max-w-[420px] mx-4 md:mx-40">
-            <div className="bg-white/20 rounded-2xl p-4 relative">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
               <div className="mt-1 mb-1 bg-black/80 w-full rounded-2xl p-4 relative">
                 <p>
                   <span className='text-white text-lg md:text-xl'>Ingeniería en Sistemas Computacionales</span><br />
@@ -460,19 +463,19 @@ const HomePage = () => {
             : 'opacity-0 transform translate-y-8 absolute inset-0 pointer-events-none'
         }`}>
           <div id='certificaciones' className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-[1200px] mx-4 md:mx-auto">
-            <div className="bg-white/10 rounded-lg p-4 relative transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
               <img src="certificados/git.png" alt="git" className="w-full h-full object-cover"/>
             </div>
-            <div className="bg-white/10 rounded-lg p-4 relative transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
               <img src="certificados/HTML&CSS.png" alt="html css" className="w-full h-full object-cover"/>
             </div>
-            <div className="bg-white/10 rounded-lg p-4 relative transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
               <img src="certificados/Logica_programacion.png" alt="logica" className="w-full h-full object-cover"/>
             </div>
-            <div className="bg-white/10 rounded-lg p-4 relative transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
               <img src="certificados/Logica _javascript.png" alt="javascript" className="w-full h-full object-cover"/>
             </div>
-            <div className="bg-white/10 rounded-lg p-4 relative transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center transition-all duration-300 hover:scale-[1.2] md:hover:scale-[1.4] hover:z-50 z-10">
               <img src="certificados/Ciberseguridad.png" alt="ciberseguridad" className="w-full h-full object-cover"/>
             </div>
           </div>
@@ -485,10 +488,10 @@ const HomePage = () => {
             : 'opacity-0 transform translate-y-8 absolute inset-0 pointer-events-none'
         }`}>
           <div id='reconocimientos' className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-[1200px] mx-4 md:mx-40">
-            <div className="bg-white/10 rounded-lg p-4 relative transition-all duration-300 cursor-pointer hover:scale-[1.2] md:hover:scale-[1.3] hover:z-50 z-10 flex justify-center items-center">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center transition-all duration-300 cursor-pointer hover:scale-[1.2] md:hover:scale-[1.3] hover:z-50 z-10 flex justify-center items-center">
               <img src="reconocimientos/tec.png" alt="tec" className="w-64 h-80 object-cover"/>
             </div>
-            <div className="bg-white/10 rounded-lg p-4 relative transition-all duration-300 cursor-pointer hover:scale-[1.2] md:hover:scale-[1.3] hover:z-50 z-10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center transition-all duration-300 cursor-pointer hover:scale-[1.2] md:hover:scale-[1.3] hover:z-50 z-10">
               <img src="reconocimientos/inters_harman.png" alt="harman" className="w-full h-full object-cover"/>
             </div>
           </div>
@@ -539,7 +542,7 @@ const HomePage = () => {
                   <p className="text-gray-300 text-base">Septiembre 2023 - Mayo 2024</p>
                   <button onClick={(e) => {
                           e.stopPropagation();
-                          window.open('/tec', '_blank');}}
+                          navigate('/tec');}}
                     className="bg-emerald-500 hover:bg-emerald-700 text-black px-4 py-2 rounded-lg font-semibold transition-colors duration-300 flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -563,7 +566,7 @@ const HomePage = () => {
                   
                   <button onClick={(e) => {
                           e.stopPropagation();
-                          window.open('/avo', '_blank');}}
+                          navigate('/avoped');}}
                     className="bg-emerald-500 hover:bg-emerald-700 text-black px-4 py-2 rounded-lg font-semibold transition-colors duration-300 flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -586,7 +589,7 @@ const HomePage = () => {
                   <p className="text-gray-300 text-base">Agosto 2022 - Enero 2023</p>
                   <button onClick={(e) => {
                           e.stopPropagation();
-                          window.open('/pisadita', '_blank');}}
+                          navigate('/pisadita');}}
                     className="bg-emerald-500 hover:bg-emerald-700 text-black px-4 py-2 rounded-lg font-semibold transition-colors duration-300 flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -609,7 +612,7 @@ const HomePage = () => {
         </div>   
         <div className="-mt-12 grid grid-cols-1 md:grid-cols-4 gap-3 max-w-[1200px] mx-auto px-4">
       {/*Contacto celular*/}   
-          <div className="bg-black rounded-lg p-4 relative border-2 border-white">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <div className="absolute top-0 left-0 right-0 h-1 bg-white rounded-t-lg"></div>
             <div className="flex flex-col items-center gap-6">
               <div className="w-8 h-8 md:w-16 md:h-16 flex items-center justify-center text-emerald-500 shadow-lg transition-colors">
@@ -628,7 +631,7 @@ const HomePage = () => {
             </p>
           </div>
       {/*Contacto ubicacion*/}  
-          <div className="bg-black rounded-lg p-4 relative border-2 border-white">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <div className="absolute top-0 left-0 right-0 h-1 bg-white rounded-t-lg"></div>
 
             <div className="flex flex-col items-center gap-6">
@@ -643,13 +646,13 @@ const HomePage = () => {
                 Actualmente radico en la ciudad de Tacámbaro Michoacán
               </span>
               <a href="https://maps.app.goo.gl/v1F12fL8zz6a79bm8" target="_blank" rel="noopener noreferrer"
-                 className='text-white font-semibold text-xl text-center hover:text-purple-300 transition-colors cursor-pointer'>
+                 className='text-white font-semibold text-xl text-center hover:text-emerald-500 transition-colors cursor-pointer'>
                 Ver en mapa 
               </a>
             </p>
           </div>
       {/*Contacto correo*/}   
-          <div className="bg-black rounded-lg p-4 relative border-2 border-white">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <div className="absolute top-0 left-0 right-0 h-1 bg-white rounded-t-lg"></div>
 
             <div className="flex flex-col items-center gap-6">
@@ -659,17 +662,17 @@ const HomePage = () => {
               <h3 className="text-white font-semibold text-lg md:text-2xl">Lunes a Sábado</h3>
             </div>
 
-            <p className='mt-3 flex flex-col gap-10 text-justify'>
+            <p className='mt-3 flex flex-col gap-4 text-justify'>
               <span className='text-gray-400 text-base'>
                 Tengo la disposición de responder correos de Lunes a Sábado
               </span>
-              <a href="mailto:axelaguila@gmail.com" className='text-white font-semibold text-xl text-center hover:text-purple-300 transition-colors cursor-pointer'>
+              <a href="mailto:axelaguila@gmail.com" className='text-white font-semibold text-xl text-center hover:text-emerald-500 transition-colors cursor-pointer'>
                 axelaguila@gmail.com 
               </a>
             </p>
           </div>
       {/*Contacto Linkedin*/} 
-          <div className="bg-black rounded-lg p-4 relative border-2 border-white">
+          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
             <div className="absolute top-0 left-0 right-0 h-1 bg-white rounded-t-lg"></div>
 
             <div className="flex flex-col items-center gap-6">
@@ -684,7 +687,7 @@ const HomePage = () => {
                 También puedes encontrarme en LinkedIn para oportunidades de colaboración profesional.
               </span>
               <a href="https://www.linkedin.com/in/axel-aguila-125712323/" target="_blank" rel="noopener noreferrer"
-                 className='text-white font-semibold text-xl text-center hover:text-purple-300 transition-colors cursor-pointer'>
+                 className='text-white font-semibold text-xl text-center hover:text-emerald-500 transition-colors cursor-pointer'>
                 Axel Aguila
               </a>
             </p>
@@ -692,8 +695,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className='w-full relative py-9'>
-        <div className="absolute top-8 left-0 right-0 h-0.5 bg-white/50 rounded-t-lg"></div>
-        <span className='text-gray-400'>Carlos Axel Rugerio Aguila 2025</span>
+        <div className="absolute top-8 left-0 right-0 h-0.5 bg-white rounded-t-lg"></div>
+        <span className='text-white'>Carlos Axel Rugerio Aguila 2025</span>
       </div>
     </div>
     <style dangerouslySetInnerHTML={{ __html: styles }} />
@@ -703,10 +706,13 @@ const HomePage = () => {
 
 function App() {
   return (
-    <Router basename="/portafolio">  {/* ✅ Agregar basename */}
+    <Router basename="/portafolio">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/harman" element={<Harman />} />
+        <Route path="/tec" element={<Tec />} />
+        <Route path="/avoped" element={<Avoped />} />
+        <Route path="/pisadita" element={<Pisadita />} />
       </Routes>
     </Router>
   );
