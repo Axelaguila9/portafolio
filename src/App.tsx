@@ -300,7 +300,7 @@ const HomePage = () => {
           </div>
 
           <div className='mt-5'>
-            <a href='#' download='#' className='inline-flex items-center bg-white text-gray-800 px-6 py-3 rounded-lg shadow-lg border-2 border-white
+            <a href='cv/CV Axel Aguila Ingeniero en Sistemas Computacionales.pdf' download='CV Axel Aguila Ingeniero en Sistemas Computacionales.pdf' className='inline-flex items-center bg-white text-gray-800 px-6 py-3 rounded-lg shadow-lg border-2 border-white
              hover:bg-black hover:text-white hover:border-white transition-colors font-semibold'>
               <FaDownload size={16} className='mr-2' />
               Descargar Mi CV
