@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Globe, Database, Code, GitBranch, User, Target, Briefcase, GraduationCap, Award, Badge, PhoneCall, Mail, MapPin} from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { User, Target, Briefcase, GraduationCap, Award, Badge, PhoneCall, Mail, MapPin} from 'lucide-react';
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp, FaDownload } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Harman from './harman.tsx';
@@ -7,19 +7,6 @@ import Tec from './tec.tsx';
 import Avoped from './avoped.tsx';
 import Pisadita from './pisadita.tsx';
 
-interface FloatingIconProps {
-  icon: React.ReactNode;
-  position: string;
-  delay: string;
-}
-
-const FloatingIcon: React.FC<FloatingIconProps> = ({ icon, position, delay }) => (
-  <div className={`absolute ${position} w-12 h-12 bg-white rounded-full flex items-center justify-center text-black shadow-lg animate-bounce hover:bg-white
-       transition-colors cursor-pointer`} 
-       style={{ animationDelay: delay, animationDuration: '2s' }}>
-    {icon}
-  </div>
-);
 
 const styles = `
   @keyframes scroll {
