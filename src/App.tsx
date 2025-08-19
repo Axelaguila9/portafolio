@@ -307,16 +307,45 @@ const HomePage = () => {
             </a>
           </div>
         </div>
-
-        <div className="absolute top-20 right-4 md:top-32 md:right-40 hidden md:block">
-          <div className="relative">
-            <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white">
-              <img src="fotos_axel/axel.jpg" alt="Axel" className="w-full h-full object-cover"/>
+    {/*Tarjeta*/}
+        <div className="absolute top-20 right-4 md:top-40 md:right-24 hidden md:block group">
+          <div className="transform transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:rotate-1 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-emerald-500/20">
+            <div className="relative">
+              <div className="relative bg-slate-900 w-[340px] h-[500px] overflow-hidden shadow-2xl border-4 border-slate-700 rounded-3xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-900 to-black"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-emerald-500/5 to-emerald-400/10 rounded-3xl"></div>
+                <div className="absolute top-4 left-4 w-32 h-32 bg-emerald-400/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 right-8 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
+                
+                <div className="absolute top-0 left-0 right-0 z-10 p-6 text-center">
+                  <h2 className="text-white text-2xl font-bold mb-1">Axel Aguila</h2>
+                  <p className="text-emerald-300 text-sm">Desarrollador Full Stack</p>
+                </div>
+                
+                <div className="absolute bottom-0 left-0 right-0 z-10 p-4 bg-gradient-to-t from-slate-900/95 to-transparent rounded-b-3xl">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-emerald-400/30">
+                        <img src="fotos_axel/carlos.png" alt="Axel" className="w-full h-full object-cover object-center"/>
+                      </div>
+                      <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                          <span className="text-white text-sm font-medium">@Axelaguila</span>
+                        </div>
+                        <span className="text-emerald-200 text-xs">En línea</span>
+                      </div>
+                    </div>
+                    <a href="https://www.linkedin.com/in/axel-aguila-125712323/" target="_blank" rel="noopener noreferrer"
+                       className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors shadow-lg">
+                      Contáctame
+                    </a>
+                  </div>
+                </div>
+                
+                <img src="fotos_axel/carlos.png" alt="Axel" className="absolute bottom-0 left-0 w-full h-96 object-cover object-center rounded-b-3xl"/>
+              </div>
             </div>
-            <FloatingIcon icon={<Code size={20} />} position="top-6 -left-4" delay="0s"/>
-            <FloatingIcon icon={<Database size={20} />} position="-top-6 -right-6" delay="0.3s"/>
-            <FloatingIcon icon={<GitBranch size={20} />} position="-bottom-6 -left-6" delay="1.2s"/>
-            <FloatingIcon icon={<Globe size={20} />} position="bottom-6 -right-6" delay="1.5s"/>
           </div>
         </div>
       </div>
