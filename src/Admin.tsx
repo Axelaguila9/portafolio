@@ -2,30 +2,6 @@ import { useState, useEffect } from 'react';
 import { Eye, Users, Calendar, TrendingUp, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const BOT_TOKEN = '8422421857:AAEE_YFFOctg6jTYGOp21Of2Oavdxy_5kqQ';
-const CHAT_ID = '6599042897';
-
-// Función para enviar notificación:
-const sendTelegramNotification = async (visitCount: number) => {
-  try {
-    const message = `🚀 Nueva visita #${visitCount} a tu portafolio DevAxel!\n\nFecha: ${new Date().toLocaleString('es-MX')}`;
-    
-    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: message
-      })
-    });
-    
-    if (response.ok) {
-      console.log('Notificación enviada correctamente');
-    }
-  } catch (error) {
-    console.error('Error enviando notificación:', error);
-  }
-};
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -73,8 +49,6 @@ const Admin = () => {
       const data = await response.json();
       setStats(prev => ({ ...prev, totalVisits: data.value }));
       
-      // Enviar notificación
-      await sendTelegramNotification(data.value);
     } catch (error) {
       console.error('Error incrementing visit:', error);
     }
@@ -178,12 +152,12 @@ const Admin = () => {
         {/* Botón de prueba */}
         <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
           <h3 className="text-xl font-semibold mb-4">Acciones</h3>
-          <button
-            onClick={incrementVisit}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg transition-colors"
-          >
-            Simular Nueva Visita
-          </button>
+            <button
+              onClick={incrementVisit}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg transition-colors"
+            >
+              Incrementar Visita
+            </button>
         </div>
       </div>
     </div>
