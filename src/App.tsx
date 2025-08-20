@@ -88,10 +88,19 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, [roles.length]);
 
-  useEffect(() => {
-  fetch('https://api.countapi.xyz/hit/axelaguila9-portfolio/visits')
-    .catch(err => console.log('Error registrando visita:', err));
-  }, []);
+useEffect(() => {
+  // Sistema híbrido: HitCount + localStorage como respaldo
+  fetch('https://hits.dwyl.com/axelaguila9/portfolio')
+    .then(() => {
+      console.log('Visita registrada en HitCount');
+    })
+    .catch(() => {
+      // Si falla, usar contador local como respaldo
+      const localVisits = parseInt(localStorage.getItem('portfolio-visits') || '0');
+      localStorage.setItem('portfolio-visits', (localVisits + 1).toString());
+      console.log('Visita registrada localmente');
+    });
+}, []);
 
   return (
     <>
@@ -715,7 +724,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className='w-full relative py-9' onClick={() => navigate('/admin')}>
+      <div className='w-full relative py-9'>
         <div className="absolute top-8 left-0 right-0 h-0.5 bg-white rounded-t-lg"></div>
         <span className='text-white'>Carlos Axel Rugerio Aguila 2025</span>
       </div>

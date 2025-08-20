@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Eye, Users, Calendar, TrendingUp, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-
 const Admin = () => {
   const navigate = useNavigate();
   const [stats, setStats] = useState({
@@ -12,45 +11,58 @@ const Admin = () => {
     monthlyVisits: 0
   });
   const [loading, setLoading] = useState(true);
+  const [dataSource, setDataSource] = useState(''); // Para mostrar de dónde vienen los datos
 
   useEffect(() => {
-    // Función para obtener estadísticas reales
     const fetchStats = async () => {
       try {
-        // CountAPI para contador total
-        const response = await fetch('https://api.countapi.xyz/get/axelaguila9-portfolio/visits');
+        // Intentar obtener de HitCount primero
+        const response = await fetch('https://hits.dwyl.com/axelaguila9/portfolio.json');
         const data = await response.json();
         
         setStats(prev => ({
           ...prev,
-          totalVisits: data.value || 0
+          totalVisits: data.total || 0
         }));
-
-        // Por ahora solo mostramos visitas totales (datos reales)
-        // Los otros datos requieren APIs adicionales
-
-        setLoading(false);
+        setDataSource('HitCount API');
+        
       } catch (error) {
-        console.error('Error fetching stats:', error);
-        setLoading(false);
+        console.error('HitCount falló, usando localStorage:', error);
+        // Si falla, usar localStorage como respaldo
+        const localVisits = parseInt(localStorage.getItem('portfolio-visits') || '0');
+        setStats(prev => ({
+          ...prev,
+          totalVisits: localVisits
+        }));
+        setDataSource('Contador Local');
       }
+      setLoading(false);
     };
 
     fetchStats();
-    
-    // Actualizar cada 30 segundos
     const interval = setInterval(fetchStats, 30000);
     return () => clearInterval(interval);
   }, []);
 
   const incrementVisit = async () => {
     try {
-      const response = await fetch('https://api.countapi.xyz/hit/axelaguila9-portfolio/visits');
+      // Intentar incrementar en HitCount
+      await fetch('https://hits.dwyl.com/axelaguila9/portfolio');
+      
+      // Obtener el nuevo total
+      const response = await fetch('https://hits.dwyl.com/axelaguila9/portfolio.json');
       const data = await response.json();
-      setStats(prev => ({ ...prev, totalVisits: data.value }));
+      setStats(prev => ({ ...prev, totalVisits: data.total }));
+      setDataSource('HitCount API');
       
     } catch (error) {
-      console.error('Error incrementing visit:', error);
+      console.error('Error con HitCount, usando localStorage:', error);
+      // Si falla, incrementar localmente
+      const localVisits = parseInt(localStorage.getItem('portfolio-visits') || '0');
+      const newVisits = localVisits + 1;
+      localStorage.setItem('portfolio-visits', newVisits.toString());
+      setStats(prev => ({ ...prev, totalVisits: newVisits }));
+      setDataSource('Contador Local');
     }
   };
 
@@ -91,6 +103,7 @@ const Admin = () => {
               <div>
                 <p className="text-gray-400 text-sm">Visitas Totales</p>
                 <p className="text-3xl font-bold text-emerald-400">{stats.totalVisits}</p>
+                <p className="text-xs text-gray-500">Fuente: {dataSource}</p>
               </div>
               <Eye className="w-8 h-8 text-emerald-400" />
             </div>
@@ -130,20 +143,25 @@ const Admin = () => {
           </div>
         </div>
 
-        {/* Solo visitas totales (datos reales) */}
+        {/* Datos disponibles */}
         <div className="grid grid-cols-1 gap-6 mb-8">
           <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-4">Datos Disponibles</h3>
+            <h3 className="text-xl font-semibold mb-4">Sistema de Conteo Híbrido</h3>
             <div className="bg-emerald-900/20 rounded-lg p-4">
               <div className="text-center">
                 <p className="text-gray-400 text-sm mb-2">Visitas Totales</p>
                 <p className="text-4xl font-bold text-emerald-400">{stats.totalVisits}</p>
-                <p className="text-xs text-gray-400 mt-2">Actualizado en tiempo real</p>
+                <p className="text-xs text-gray-400 mt-2">
+                  {dataSource === 'HitCount API' ? 
+                    'Datos en tiempo real desde HitCount' : 
+                    'Datos locales (respaldo activo)'
+                  }
+                </p>
               </div>
             </div>
             <div className="mt-4 text-center">
               <p className="text-gray-400 text-sm">
-                Para más estadísticas detalladas, considera integrar Google Analytics
+                El sistema usa HitCount como fuente principal y localStorage como respaldo confiable
               </p>
             </div>
           </div>
@@ -152,12 +170,15 @@ const Admin = () => {
         {/* Botón de prueba */}
         <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
           <h3 className="text-xl font-semibold mb-4">Acciones</h3>
-            <button
-              onClick={incrementVisit}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg transition-colors"
-            >
-              Incrementar Visita
-            </button>
+          <button
+            onClick={incrementVisit}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg transition-colors"
+          >
+            Simular Visita
+          </button>
+          <p className="text-gray-400 text-sm mt-2">
+            Esto simula una visita para probar el sistema de conteo
+          </p>
         </div>
       </div>
     </div>
