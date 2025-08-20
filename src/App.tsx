@@ -88,19 +88,18 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, [roles.length]);
 
-useEffect(() => {
-  // Sistema híbrido: HitCount + localStorage como respaldo
-  fetch('https://hits.dwyl.com/axelaguila9/portfolio')
-    .then(() => {
-      console.log('Visita registrada en HitCount');
-    })
-    .catch(() => {
-      // Si falla, usar contador local como respaldo
-      const localVisits = parseInt(localStorage.getItem('portfolio-visits') || '0');
-      localStorage.setItem('portfolio-visits', (localVisits + 1).toString());
-      console.log('Visita registrada localmente');
-    });
-}, []);
+  useEffect(() => {
+    const registerVisit = async () => {
+      try {
+        await fetch(`https://api.countapi.xyz/hit/axelaguila9-global/visits`);
+        console.log('Visita registrada globalmente');
+      } catch (error) {
+        console.log('Error registrando visita:', error);
+      }
+    };
+    
+    registerVisit();
+  }, []);
 
   return (
     <>

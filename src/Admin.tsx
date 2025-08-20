@@ -16,27 +16,18 @@ const Admin = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        // Intentar obtener de HitCount primero
-        const response = await fetch('https://hits.dwyl.com/axelaguila9/portfolio.json');
+        const response = await fetch('https://api.countapi.xyz/get/axelaguila9-global/visits');
         const data = await response.json();
         
-        setStats(prev => ({
-          ...prev,
-          totalVisits: data.total || 0
-        }));
-        setDataSource('HitCount API');
-        
+        setStats(prev => ({ ...prev, totalVisits: data.value || 0 }));
+        setDataSource('Contador Global');
+        setLoading(false);
       } catch (error) {
-        console.error('HitCount falló, usando localStorage:', error);
-        // Si falla, usar localStorage como respaldo
-        const localVisits = parseInt(localStorage.getItem('portfolio-visits') || '0');
-        setStats(prev => ({
-          ...prev,
-          totalVisits: localVisits
-        }));
-        setDataSource('Contador Local');
+        console.error('Error obteniendo estadísticas:', error);
+        setStats(prev => ({ ...prev, totalVisits: 0 }));
+        setDataSource('Sin conexión');
+        setLoading(false);
       }
-      setLoading(false);
     };
 
     fetchStats();
