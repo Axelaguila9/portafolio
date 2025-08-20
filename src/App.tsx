@@ -715,7 +715,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className='w-full relative py-9'>
+      <div className='w-full relative py-9' onClick={() => navigate('/admin')}>
         <div className="absolute top-8 left-0 right-0 h-0.5 bg-white rounded-t-lg"></div>
         <span className='text-white'>Carlos Axel Rugerio Aguila 2025</span>
       </div>
