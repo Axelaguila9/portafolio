@@ -6,7 +6,24 @@ import Harman from './harman.tsx';
 import Tec from './tec.tsx';
 import Avoped from './avoped.tsx';
 import Pisadita from './pisadita.tsx';
+import Admin from './Admin.tsx';
 
+const sendTelegramNotification = async (visitCount: number) => {
+  try {
+    const message = `🚀 Nueva visita #${visitCount} a tu portafolio DevAxel!\n\nFecha: ${new Date().toLocaleString('es-MX')}`;
+    
+    await fetch(`https://api.telegram.org/bot8422421857:AAEE_YFFOctg6jTYGOp21Of2Oavdxy_5kqQ/sendMessage`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        chat_id: '6599042897',
+        text: message
+      })
+    });
+  } catch (error) {
+    console.error('Error enviando notificación:', error);
+  }
+};
 
 const styles = `
   @keyframes scroll {
@@ -87,6 +104,15 @@ const HomePage = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [roles.length]);
+{/*Notificaciones*/}
+  useEffect(() => {
+    fetch('https://api.countapi.xyz/hit/axelaguila9-portfolio/visits')
+      .then(res => res.json())
+      .then(data => {
+        sendTelegramNotification(data.value);
+      })
+      .catch(err => console.log('Error registrando visita:', err));
+  }, []);
 
   return (
     <>
@@ -729,6 +755,7 @@ function App() {
         <Route path="/tec" element={<Tec />} />
         <Route path="/avoped" element={<Avoped />} />
         <Route path="/pisadita" element={<Pisadita />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
   );
